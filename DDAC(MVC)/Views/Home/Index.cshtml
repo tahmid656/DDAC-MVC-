@@ -49,7 +49,7 @@
             <p class="card-text users-info"></p>
         </div>
     </div>
-    <div class="card songs-card border-rad m-0 p-0 col-lg-4 col-md-4 col-sm-5">
+    <div class="card songs-card border-rad m-0 p-0 col-lg-4 col-md-4 col-sm-5" onclick="window.location='/songs';">
         <div class="card-body">
             <p class="song-card-title mb-0">Diversify your genres</p>
             <p class="card-text mt-3 genre-info"></p>
@@ -100,7 +100,7 @@
             console.log(error)
         }
     }
-    async function getG() {
+    async function filterGenre() {
         let musicData = await getGenres();
         genreArray = [];
         musicData.forEach(music => {
@@ -113,5 +113,5 @@
     }
     renderUser();
     renderNumberofUsers();
-    getG();
+    filterGenre();
 </script>

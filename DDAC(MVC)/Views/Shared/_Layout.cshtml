@@ -1,6 +1,4 @@
-﻿@{var status = "";}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -62,16 +60,13 @@
             if (user.type == 0) {
                 container.innerHTML = `
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link text-light" href="">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                <a class="nav-link text-light" href="privacy">Privacy</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="MusicList">Music List</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="MusicList">${user.fullName}</a>
+                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
                             </li>
                             `;
             }
