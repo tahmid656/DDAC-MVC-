@@ -63,9 +63,8 @@
     async function getUser() {
         let id = 1;
         let userApi = api + '/user/' + id;
-        console.log(userApi);
         try {
-            let response = await fetch(userApi);
+            let response = await fetch(userApi, { cache: "force-cache" });
             return await response.json();
         } catch (error) {
             console.log(error);
@@ -79,7 +78,7 @@
     async function getNumberofUsers() {
         let usersApi = api + '/user';
         try {
-            let response = await fetch(usersApi);
+            let response = await fetch(usersApi, { cache: "force-cache" });
             return await response.json();
         } catch (error) {
             console.log(error);
@@ -94,7 +93,7 @@
     async function getGenres() {
         let musicsApi = api + '/music';
         try {
-            let musicData = await fetch(musicsApi);
+            let musicData = await fetch(musicsApi, { cache: "force-cache" });
             return await musicData.json();
         } catch (error) {
             console.log(error)

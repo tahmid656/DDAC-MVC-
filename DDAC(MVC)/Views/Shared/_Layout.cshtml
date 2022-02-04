@@ -46,9 +46,8 @@
         async function getUser() {
             let id = 1;
             let userApi = api + '/user/' + id;
-            console.log(userApi);
             try {
-                let response = await fetch(userApi);
+                let response = await fetch(userApi, { cache: "force-cache" });
                 return await response.json();
             } catch (error) {
                 console.log(error);
@@ -58,6 +57,32 @@
             let user = await getUser();
             let container = document.querySelector('.nav-content');
             if (user.type == 0) {
+                container.innerHTML = `
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
+                            </li>
+                            `;
+            }
+            else if (user.type == 1) {
+                container.innerHTML = `
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
+                            </li>
+                            `;
+            }
+            else if (user.type == 2) {
                 container.innerHTML = `
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="">Home</a>

@@ -56,7 +56,7 @@
     async function getSongs() {
         let musicsApi = api + '/music';
         try {
-            let songsData = await fetch(musicsApi);
+            let songsData = await fetch(musicsApi, {cache: "force-cache"});
             return await songsData.json();
         } catch (error) {
             console.log(error)

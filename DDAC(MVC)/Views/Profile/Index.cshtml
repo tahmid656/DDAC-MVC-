@@ -58,7 +58,7 @@
         let id = 1;
         let userApi = api + '/user/' + id;
         try {
-            let userData = await fetch(userApi);
+            let userData = await fetch(userApi, { cache: "force-cache" });
             return await userData.json();
         } catch (error) {
             console.log(error)

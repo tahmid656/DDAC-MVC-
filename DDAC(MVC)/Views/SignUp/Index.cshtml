@@ -32,7 +32,7 @@
 
     myForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        let userApi = 'https://localhost:44382/api/user';
+        let userApi = api + '/user';
         const formData = new FormData(this);
         var object = {};
         formData.forEach(function (value, key) {
